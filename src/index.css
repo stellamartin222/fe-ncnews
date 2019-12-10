@@ -85,12 +85,7 @@ p {
   margin-left: 17%;
 }
 
-.commentSection {
-  border-style: groove;
-  border-width: 2em; 
-}
-
 .comments {
-  border-style: groove;
+  border-style: solid;
   border: black;
 }

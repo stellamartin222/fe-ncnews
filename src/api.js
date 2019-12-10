@@ -33,3 +33,11 @@ export const getComments = (article) => {
             return data.comments
         })
 }
+
+export const postComment = (article, comment) => {
+    axios
+    .post(`https://sm-ncnews.herokuapp.com/api/articles/${article}/comments`, {comment})
+    .then(() => {
+        console.log('complete')
+    })
+}

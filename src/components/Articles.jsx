@@ -4,11 +4,14 @@ import {Link} from '@reach/router'
 
 export default class Articles extends Component {
     state =  {
-        articles: []
+        articles: [],
+        isLoading: true
     }
     
 
     render() {
+        {const { isLoading } = this.state
+        if (isLoading) return <p>loading Articles...</p>}
         return (
             <div>
                 <h2 className="articleCards">ARTICLES</h2>
@@ -32,7 +35,7 @@ export default class Articles extends Component {
     componentDidMount() {
         getArticles(this.props.topic)
         .then(articles => {
-            this.setState({articles: articles})
+            this.setState({articles: articles, isLoading: false})
         })
     }
 
