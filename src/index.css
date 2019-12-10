@@ -1,28 +1,63 @@
+header {
+    width: 100%; 
+    height: 2em;
+    border-style: solid;
+    border-color: #046B99;
+    background-color: #046B99;
+    
+}
+
+h1{
+    width: 100%; 
+    height: 2em;
+    border-style: solid;
+    border-color: #046B99;
+    background-color: #046B99;
+    margin-left: 8%;
+}
+
 body {
+  margin: 0%;
+  margin-top: 0%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: black;
+  text-decoration: none;
 }
 
 
 .nav-bar {
-  background-color:#538AFF;
+  background-color:#046B99;
   position: absolute;
   height: 100%;
+  width: 15%;
+  position: fixed;
+  margin-top:0%
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+  
 }
 
 li {
   list-style-type: none;
   border: 1em;
   border-color: black;
-  
+  text-decoration: none;
 }
 
-h1 {
-  background-color:#538AFF;
+.linkItem {
+  text-decoration: none;
+}
+
+.linkItem :hover {
+  text-decoration: wavy;
 }
 
 .articleCard {
@@ -32,4 +67,30 @@ h1 {
 
 .articleCard:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+h2{
+  margin-left: 17%;
+}
+
+h3 {
+  margin-left: 17%;
+}
+
+h4 {
+  margin-left: 17%;
+}
+
+p {
+  margin-left: 17%;
+}
+
+.commentSection {
+  border-style: groove;
+  border-width: 2em; 
+}
+
+.comments {
+  border-style: groove;
+  border: black;
 }

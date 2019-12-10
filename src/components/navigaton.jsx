@@ -8,11 +8,15 @@ export default function Navigaton() {
             <Link to="/">
             <button>Home</button>
             </Link>
+
             <br/>
+
             <Link to="/topics">
             <button>Topics</button>
             </Link>
+
             <br/>
+            
             <Link to="/articles">
             <button>Articles</button>
             </Link>

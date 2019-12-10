@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import {Link} from '@reach/router'
-
+import {getTopics} from "../api"
+ 
 export default class Topics extends Component {
     state = {
-        topics: []
+        topics: [],
+        isLoading: true
     };
 
     render() {
+        {const { isLoading } = this.state
+        if (isLoading) return <p>loading...</p>}
         return (
-            <div>
+                          
+            <div className="linkItem">
                 <h2>TOPICS</h2>
                 {this.state.topics.map((topic) => {
                     return (
@@ -26,9 +30,9 @@ export default class Topics extends Component {
     }
 
     componentDidMount() {
-        axios.get("https://sm-ncnews.herokuapp.com/api/topics")
-        .then((topic) => {
-            this.setState({topics: topic.data.topics})
+        getTopics()
+        .then((topics) => {
+            this.setState({topics: topics, isLoading: false})
         })
     }
 }

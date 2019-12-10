@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import {getArticles} from '../api'
 import {Link} from '@reach/router'
 
 export default class Articles extends Component {
@@ -30,10 +30,10 @@ export default class Articles extends Component {
     }
 
     componentDidMount() {
-        axios.get("https://sm-ncnews.herokuapp.com/api/articles")
-        .then((article) => {
-            console.log({articles: article.data.articles})
-            this.setState({articles: article.data.articles})
+        getArticles(this.props.topic)
+        .then(articles => {
+            this.setState({articles: articles})
         })
     }
+
 }
