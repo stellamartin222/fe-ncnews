@@ -6,19 +6,35 @@ export default function Navigaton() {
     return (
         <nav className="nav-bar">
             <Link to="/">
-            <button>Home</button>
+            <button className="menuButtons">Home</button>
             </Link>
 
-            <br/>
+            
 
             <Link to="/topics">
-            <button>Topics</button>
+                <button className="menuButtons">Topics</button>
             </Link>
-
-            <br/>
             
+            {/* <select> 
+                <Link to="/topics">
+                <option>Topics</option>
+                </Link>
+                <Link to="/topics/coding">
+                <option>Coding</option>
+                </Link>
+                <Link to="/topics/football">
+                <option>Football</option>
+                </Link>
+                <Link to="/topics/cooking">
+                <option>Cooking</option>
+                </Link>
+            </select> */}
+           
+
+            
+
             <Link to="/articles">
-            <button>Articles</button>
+            <button className="menuButtons">Articles</button>
             </Link>
         </nav>
     )

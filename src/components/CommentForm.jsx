@@ -3,7 +3,7 @@ import {postComment} from '../api'
 
 export default class CommentForm extends Component {
     state = {
-        commentInput : ''
+        commentInput : '',
     }
 
     render() {
@@ -24,10 +24,5 @@ export default class CommentForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         postComment(this.props.article_id, this.state.commentInput)
-        // create post function
-        // use it here
-        // THEN add it to comments
-        //  - define in Comments
-        //  - pass down on props
     }
 }

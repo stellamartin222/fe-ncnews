@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import {getArticles} from '../api'
 import {Link} from '@reach/router'
+import SortByButton from "./SortByButton"
 
 export default class Articles extends Component {
     state =  {
         articles: [],
-        isLoading: true
+        isLoading: true,
+        sortBy : null
     }
     
 
@@ -15,6 +17,7 @@ export default class Articles extends Component {
         return (
             <div>
                 <h2 className="articleCards">ARTICLES</h2>
+                <SortByButton getOrder={this.getOrder}/>
                 {this.state.articles.map((article) => {
                     return (
                         
@@ -32,11 +35,24 @@ export default class Articles extends Component {
         )
     }
 
-    componentDidMount() {
-        getArticles(this.props.topic)
+    getOrder = event => {
+        this.setState({ sortBy: event})
+    }
+
+    fetchArticles() {
+        getArticles(this.props.topic, this.state.sortBy)
         .then(articles => {
             this.setState({articles: articles, isLoading: false})
         })
     }
 
+    componentDidMount() {
+        this.fetchArticles()
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.sortBy !== this.state.sortBy) {
+            this.fetchArticles()
+        }
+    }
 }

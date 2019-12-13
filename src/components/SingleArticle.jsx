@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Comments from './Comments'
 import {getSingleArticle} from '../api'
+import Votes from './Votes'
 
 
 export default class SingleArticle extends Component {
@@ -21,6 +22,7 @@ export default class SingleArticle extends Component {
                 <p>{article.topic}</p>
                 <p>{article.author}</p>
                 <h3>{article.body}</h3>
+                <Votes votes={article.votes}/>
                 <br/>
                 <Comments article_id={this.props.article_id}/>
             </div>

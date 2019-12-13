@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {getComments} from '../api'
 import CommentForm from './CommentForm'
+import CommentCard from './CommentCard'
 
 export default class Comments extends Component {
     state = {
@@ -16,21 +17,13 @@ export default class Comments extends Component {
             <div>
                 <h4>Comments:-</h4>
 
-                <CommentForm />
+                <CommentForm article_id={this.props.article_id}/>
 
 
                 <div className="commentSection">
                 {comments.map((comment) => {
                     return (
-                        
-                        <li className="comments" key={comment.comment_id}>
-                            <br/>   
-                            <p>{comment.body}</p>
-                            <p>Comment by : {comment.author}</p>
-                            <p>Votes : {comment.votes}</p>
-                            <p>Created at : {comment.created_at}</p>
-                        </li>
-                        
+                        <CommentCard key={comment.comment_id} comment={comment}/>
                     )
                 })}
                 </div>
@@ -47,8 +40,13 @@ export default class Comments extends Component {
             })
     }
 
-
     componentDidMount() {
         this.fetchComments()
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.comments !== this.state.comments){
+            this.fetchComments()
+        }
     }
 }

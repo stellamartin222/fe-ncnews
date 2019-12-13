@@ -17,6 +17,8 @@ h1{
 }
 
 body {
+  text-decoration: none;
+  color: black;
   margin: 0%;
   margin-top: 0%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -89,3 +91,36 @@ p {
   border-style: solid;
   border: black;
 }
+
+button {
+  background-color: rgb(38, 136, 51);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* .menuButtons {
+  background-color: white;
+  border-color: #2196F3;
+  color: dodgerblue
+}
+
+.menuButtons:hover {
+  background: #2196F3;
+  color: white;
+} */
+
+/* .nav-bar {
+  margin-top: 0%;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  border-radius: 5px;
+} */
